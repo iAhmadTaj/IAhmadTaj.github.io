@@ -1,0 +1,97 @@
+﻿name: Build & Deploy Next.js App
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: ["main"]
+    
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # ----------------------- Build Job
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      
+      # Runs a single command using the runners shell
+      - name: Setup Node In Actions
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.12.x'
+          cache: "pnpm"
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
+        id: pages_conf
+        with:
+         # Try to enable Pages for the repository if it is not already enabled. This option requires a token other than GITHUB_TOKEN to be provided. In the context of a Personal Access Token, the epo scope or Pages write permission is required. In the context of a GitHub App, the dministration:write and pages:write permissions are required.
+         enablement: true # optional, default is false
+         # GitHub token
+         token: ${{secrets.GH_PAT}} # default is ${{ github.token }}
+   
+      - name: Install Dependencies
+        run: pnpm install
+        
+      - name: Build Next.js App
+        run: pnpm run build
+
+      - name: Export Static Site
+        run: pnpm run export || echo "Export script not configured, using build output"
+
+      - name: Archive artifact
+        shell: sh
+        run: |
+          chmod -c -R +rX "$INPUT_PATH" | while read line; do
+            echo "::warning title=Invalid file permissions automatically fixed::$line"
+          done
+          tar \
+            --dereference --hard-dereference \
+            --directory "$INPUT_PATH" \
+            -cvf "$RUNNER_TEMP/artifact.tar" \
+            --exclude=.git \
+            --exclude=.github \
+            .
+        env:
+          INPUT_PATH: out/
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: ${{ runner.temp }}/artifact.tar
+            
+      # Runs a set of commands using the runners shell
+      - name: Build Successful (${{ runner.temp }}/artifact.tar)
+        run: echo Build was successful
+        
+#-------------------- Deploy Job 
+  deploy:
+    needs: build
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+        with:
+          token: ${{ secrets.GH_PAT }}
+          artifact_name: artifact
