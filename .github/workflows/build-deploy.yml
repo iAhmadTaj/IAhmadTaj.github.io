@@ -35,7 +35,8 @@ jobs:
         uses: actions/configure-pages@v3
         id: pages_conf
         with:
-         # Try to enable Pages for the repository if it is not already enabled. This option requires a token other than GITHUB_TOKEN to be provided. In the context of a Personal Access Token, the epo scope or Pages write permission is required. In the context of a GitHub App, the dministration:write and pages:write permissions are required.
+         # Try to enable Pages for the repository if it is not already enabled. This option requires a token other than GITHUB_TOKEN to be provided. In the context of a Personal Access Token, the 
+#epo scope or Pages write permission is required. In the context of a GitHub App, the dministration:write and pages:write permissions are required.
          enablement: true # optional, default is false
          # GitHub token
          token: ${{secrets.GH_PAT}} # default is ${{ github.token }}
