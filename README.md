@@ -1,6 +1,5 @@
 # Portfolio Website - 
 
-![Portfolio Preview](https://res.cloudinary.com/dtunq8gr3/image/upload/t_portfolio/portfolio_hmappr)
 
 # Steps to Run Locally 
 
