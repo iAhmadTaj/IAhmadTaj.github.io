@@ -52,7 +52,7 @@
   align-items: center;
   /* Keep a consistent hit target size on mobile */
   padding: 8px 12px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(20, 20, 20);
   border-radius: 7px;
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2);
   transition: all 0.3s;
@@ -60,7 +60,7 @@
 }
 
 .socialsDiv .socialsItem:hover {
-  background-color: #202020;
+  background-color: #2a2a2a;
   border: 1px solid rgba(255, 255, 255, 0);
 }
 
@@ -88,7 +88,7 @@
   }
   .socialsDiv .socialsItem:hover {
     /* Disable hover-only embellishments on touch */
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(20, 20, 20);
     box-shadow: none;
     border-radius: 7px;
     padding: 8px 12px;
@@ -356,6 +356,10 @@
   transform: translateY(-2px);
 }
 
+
+.tabContent {
+  min-height: 60vh;
+}
 /* small type/spacing adjustments for narrow devices */
 @media (max-width: 500px) {
   .heroSection h1 {

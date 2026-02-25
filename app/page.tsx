@@ -47,21 +47,11 @@ The application follows a decoupled architecture, with the frontend built using 
         "/Eye-Tracking Mouse Cursor/Eye Tracking Mouse Cursor 3.png",
         "/Eye-Tracking Mouse Cursor/Eye Controlled Mouse Cursor.mp4",
       ],
-      fullDescription: `The Eye-Controlled Mouse Cursor System is an innovative humancomputer interaction project that enables users to control the mouse cursor using only their eye movements. This system leverages real-time computer vision techniques to translate eye movement and blinking into seamless cursor movement and mouse clicks.
+      fullDescription: `The Eye-Controlled Mouse Cursor System is an innovative human-computer interaction project that enables users to control the mouse cursor using only their eye movements. This system leverages real-time computer vision techniques to translate eye movement and blinking into seamless cursor movement and mouse clicks.
 
 Using a webcam, the application detects facial landmarks and tracks eye positions with high precision. Cursor movement is controlled by eye direction, while intentional blinking is used to trigger mouse click actions. This project demonstrates how assistive technology can improve accessibility for individuals with physical limitations and explores the future of touchless interaction.
 
-Key Features
-
-Real-time mouse cursor movement controlled by eye direction
-
-Blink-based mouse click detection
-
-Webcam-based face and eye tracking
-
-User-friendly graphical interface (GUI)
-
-Smooth and responsive cursor control`,
+Key Features: Real-time mouse cursor movement controlled by eye direction, blink-based mouse click detection, webcam-based face and eye tracking, user-friendly GUI, and smooth responsive cursor control.`,
     },
     "RedStore": {
       images: [
@@ -71,21 +61,11 @@ Smooth and responsive cursor control`,
         "/Redstore/Cart.png",
         "/Redstore/Main.png",
       ],
-      fullDescription: `RedStore  E-Commerce Website
-
-RedStore is a dynamic e-commerce web application focused on selling sportswear and tech products. The project uses a pre-designed frontend template, which was integrated with a custom backend developed in PHP to add full e-commerce functionality.
+      fullDescription: `RedStore is a dynamic e-commerce web application focused on selling sportswear and tech products. The project uses a pre-designed frontend template, which was integrated with a custom backend developed in PHP to add full e-commerce functionality.
 
 I implemented complete CRUD operations to manage products, users, and customer reviews. Product data is fetched dynamically from the database, and the shopping cart system allows users to add, remove, and manage items efficiently. The system also includes user authentication with a separate admin panel for managing products, users, and reviews.
 
-The application was developed and tested locally using XAMPP, with data stored in a MySQL database.
-
-Frontend Credit
-
-Frontend template credit:
-The frontend design used in this project was adapted from
-https://rsanimesh.github.io/
-
-Backend functionality, database integration, and system logic were fully implemented by me.`,
+The application was developed and tested locally using XAMPP, with data stored in a MySQL database.`,
     },
     "Toytown": {
       images: [
@@ -93,13 +73,11 @@ Backend functionality, database integration, and system logic were fully impleme
         "/Toytown/products.png",
         "/Toytown/complete.png",
       ],
-      fullDescription: `ToyTown – E-Commerce Website
-
-ToyTown is a responsive front-end focused e-commerce website designed for selling toys through an engaging and user-friendly interface. The project combines modern frontend design with essential backend functionality to simulate a real-world online shopping experience.
+      fullDescription: `ToyTown is a responsive front-end focused e-commerce website designed for selling toys through an engaging and user-friendly interface. The project combines modern frontend design with essential backend functionality to simulate a real-world online shopping experience.
 
 The frontend was developed using HTML, CSS, and JavaScript, ensuring responsiveness across different screen sizes. The platform includes dynamic product listings, a dedicated product video section, and a customer review section to enhance user engagement and product visibility.
 
-On the backend, PHP was used to implement CRUD operations for managing products and users. Data is stored and handled using a MySQL database, with the project developed and tested locally using XAMPP. This project demonstrates the integration of frontend design with backend logic in a structured e-commerce system.`,
+On the backend, PHP was used to implement CRUD operations for managing products and users. Data is stored and handled using a MySQL database, with the project developed and tested locally using XAMPP.`,
     },
   }
 
@@ -123,7 +101,6 @@ On the backend, PHP was used to implement CRUD operations for managing products 
       name: "Event Management System",
       imageUrl: "/Event Mangement system/Hero page - ems.png",
       description: "A scalable, full-stack web application for automating event registration, ticketing, and management with payment processing and access control.",
-      liveLink: "#",
       work: "Final Year Project",
       status: "Active",
       techStack: ["Next.js", ".NET", "MSSQL", "Azure DevOps"],
@@ -133,7 +110,6 @@ On the backend, PHP was used to implement CRUD operations for managing products 
       imageUrl: "/Eye-Tracking Mouse Cursor/Eye Tracking Mouse Cursor 3.png",
       description:
         "Won 1st place in university PBL competition. Python application using OpenCV and MediaPipe for real-time eye movement tracking to control mouse cursor and perform clicks via blink detection.",
-      liveLink: "#",
       work: "PBL Project",
       status: "Active",
       techStack: ["Python", "OpenCV", "MediaPipe", "PyAutoGUI"],
@@ -142,7 +118,6 @@ On the backend, PHP was used to implement CRUD operations for managing products 
       name: "RedStore",
       imageUrl: "/Redstore/Database.png",
       description: "A dynamic e-commerce website for sportswear and tech products featuring CRUD-based product management, user authentication, and a fully functional shopping cart. Includes an admin dashboard for managing products, users, and reviews.",
-      liveLink: "#",
       work: "Solo Project",
       status: "Active",
       techStack: ["PHP", "MySQL", "XAMPP", "HTML", "CSS", "JavaScript"],
@@ -151,7 +126,6 @@ On the backend, PHP was used to implement CRUD operations for managing products 
       name: "Toytown",
       imageUrl: "/Toytown/hero.png",
       description: "A responsive e-commerce website for selling toys, featuring dynamic product listings, user reviews, and video sections. Includes PHP-based CRUD operations for managing users and products.",
-      liveLink: "#",
       work: "Solo Project",
       status: "Active",
       techStack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "XAMPP"],
@@ -159,24 +133,26 @@ On the backend, PHP was used to implement CRUD operations for managing products 
   ]
 
   const [projectDisplayList, setProjectDisplayList] = useState(projectsList.slice(0, 3))
-  const [showMoreProject, setShowMoreProject] = useState("less")
+  const [showMoreProject, setShowMoreProject] = useState(false)
+
+  const DEVICON = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons"
 
   const techStack1 = [
-    { name: "React.js", iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763871/react_fxopt7.png" },
-    { name: "Next.js", iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749764539/nextjs_gyqxdo.png" },
-    { name: "JavaScript", iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763871/python_gtxoax.webp" },
-    { name: "HTML5", iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749765234/shadcn_xvjz01.png" },
-    { name: "CSS3", iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763870/mongodb_msjbae.svg" },
-    { name: "Angular", iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763870/FastAPI_prcozs.png" },
+    { name: "React.js",   iconUrl: DEVICON + "/react/react-original.svg" },
+    { name: "Next.js",    iconUrl: DEVICON + "/nextjs/nextjs-original.svg" },
+    { name: "JavaScript", iconUrl: DEVICON + "/javascript/javascript-original.svg" },
+    { name: "HTML5",      iconUrl: DEVICON + "/html5/html5-original.svg" },
+    { name: "CSS3",       iconUrl: DEVICON + "/css3/css3-original.svg" },
+    { name: "Angular",    iconUrl: DEVICON + "/angularjs/angularjs-original.svg" },
   ]
-  
+
   const techStack2 = [
-    { name: ".NET", iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763871/react_fxopt7.png" },
-    { name: "Python", iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763871/python_gtxoax.webp" },
-    { name: "C#", iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763870/mongodb_msjbae.svg" },
-    { name: "MySQL", iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763870/mongodb_msjbae.svg" },
-    { name: "MSSQL", iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763870/mongodb_msjbae.svg" },
-    { name: "Git", iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749764943/gitlogo_ozinof.png" },
+    { name: ".NET",   iconUrl: DEVICON + "/dotnetcore/dotnetcore-original.svg" },
+    { name: "Python", iconUrl: DEVICON + "/python/python-original.svg" },
+    { name: "C#",     iconUrl: DEVICON + "/csharp/csharp-original.svg" },
+    { name: "MySQL",  iconUrl: DEVICON + "/mysql/mysql-original.svg" },
+    { name: "MSSQL",  iconUrl: DEVICON + "/microsoftsqlserver/microsoftsqlserver-plain.svg" },
+    { name: "Git",    iconUrl: DEVICON + "/git/git-original.svg" },
   ]
 
   const { theme: currentTheme, setTheme: setCurrentTheme } = useTheme()
@@ -189,24 +165,20 @@ On the backend, PHP was used to implement CRUD operations for managing products 
 
   const [displayTab, setDisplayTab] = useState("info")
 
-  const experiences = [
+  const internships = [
     {
-      title: "Event Management System",
-      company: "Superior University - Final Year Project",
-      duration: "JAN 2025 - JUN 2025",
-      description: "Developed a web platform to streamline university event management with online registration and payment integration. Implemented secure ticket generation and a media gallery.",
+      title: "Virtual Assistant Intern",
+      company: "Outsourcing Solutions  Onsite, Lahore",
+      duration: "MAR 2025 - MAY 2025",
+      description:
+        "Started in the Business Development (BD) team, contributing to client outreach and coordination. Transitioned into a QA role mid-way, where I was involved in quality assurance for an ongoing project through to completion.",
     },
     {
-      title: "Eye-Tracking Mouse Cursor",
-      company: "PBL Competition Winner",
-      duration: "JULY 2024 - AUG 2024",
-      description: "Won 1st place for developing a Python application using OpenCV and MediaPipe for real-time eye movement tracking to control mouse cursor with blink detection.",
-    },
-    {
-      title: "Redstore E-commerce",
-      company: "Academic Project",
-      duration: "MAY 2024 - JUNE 2024",
-      description: "Enhanced e-commerce frontend with full CRUD functionality using PHP, MySQL database integration, and secure user authentication.",
+      title: "Software Engineer Intern",
+      company: "PHD Solutions",
+      duration: "MAR 2025 - MAY 2025",
+      description:
+        "Demonstrated strong communication skills and a sound understanding of the software development lifecycle. Actively involved in client engagement, development activities, version control management, and supporting multiple teams across the organization.",
     },
   ]
 
@@ -214,12 +186,10 @@ On the backend, PHP was used to implement CRUD operations for managing products 
     {
       title: "Advanced Diploma in Database Systems",
       issuer: "Alison",
-      imageUrl: "/images/upenn1.jpg",
     },
     {
       title: "Scrum Fundamentals Certified",
       issuer: "SCRUMstudy - Fourth Edition",
-      imageUrl: "/images/upenn.jpg",
     },
   ]
 
@@ -277,14 +247,14 @@ On the backend, PHP was used to implement CRUD operations for managing products 
           </div>
 
           <div className={styles.socialsDiv}>
-            <Link href="https://github.com/Ahmadtaj" target="_blank">
+            <Link href="https://github.com/iAhmadtaj" target="_blank">
               <div className={styles.socialsItem}>
                 <Github size={15} color="white" />
                 <p>Github</p>
               </div>
             </Link>
 
-            <Link href="https://pk.linkedin.com/in/Ahmad-Taj" target="_blank">
+            <Link href="https://www.linkedin.com/in/ahmad-taj-824162283/" target="_blank">
               <div className={styles.socialsItem}>
                 <Linkedin size={15} color="white" />
                 <p>LinkedIn</p>
@@ -325,7 +295,7 @@ On the backend, PHP was used to implement CRUD operations for managing products 
         </div>
 
         <div className={styles.bio}>
-          <p className="font-mono tracking-tighter underline leading-7 font-light text-2xl flex items-center gap-2">
+          <p className="font-mono tracking-tighter underline leading-7 font-light text-2xl flex items-center justify-center">
             <MapPin size={20} />
             Lahore, Pakistan
           </p>
@@ -356,15 +326,14 @@ On the backend, PHP was used to implement CRUD operations for managing products 
         </div>
 
         {displayTab == "info" && (
-          <>
-            {/* About Me Section */}
+          <div className={styles.tabContent}>
             <div className={styles.aboutSection}>
               <h2>About Me</h2>
               <p>
-                I am an aspiring software engineer passionate about learning and growing in the world of programming and web development. With expertise spanning frontend technologies like React and Next.js, backend development with .NET and PHP, and database management, I bring a full-stack perspective to every project.
+                I am Ahmad Taj, a software engineer based in Lahore, Pakistan. I build full-stack web applications with a focus on clean architecture and practical results. My stack covers React, Next.js, and TypeScript on the frontend, paired with .NET and PHP backends, and SQL databases on the data layer.
               </p>
               <p>
-                I'm a quick learner, able to adapt to new technologies and concepts with ease. My dedication to coding, curiosity for innovation, and ability to work well in collaborative environments drive me to contribute positively to any team. Currently pursuing my Associate Degree in Computer Science at Superior University, expected graduation May 2025.
+                I graduated with an ADP in Computer Science from Superior University (CGPA 3.88) and am currently furthering my degree with a BS CS at the University of Education, Lahore. I have hands-on experience through two internships and competition projects, including a 1st-place win in a university PBL competition. I work well in teams, pick up new tools quickly, and care about shipping things that actually work.
               </p>
               <div className={styles.statsGrid}>
                 <div className={styles.statItem}>
@@ -377,7 +346,7 @@ On the backend, PHP was used to implement CRUD operations for managing products 
                 </div>
                 <div className={styles.statItem}>
                   <p>Education</p>
-                  <p>ADP CS</p>
+                  <p>BS CS</p>
                 </div>
                 <div className={styles.statItem}>
                   <p>Certifications</p>
@@ -388,7 +357,6 @@ On the backend, PHP was used to implement CRUD operations for managing products 
 
             <div className={styles.projectsSection}>
               <h1 className="font-mono font-semibold underline leading-10 text-3xl">Projects</h1>
-
               <div className={styles.projectsHolder}>
                 {projectDisplayList.map((project, index) => (
                   <div key={index} className="flex flex-col gap-[10px]">
@@ -402,22 +370,22 @@ On the backend, PHP was used to implement CRUD operations for managing products 
                 ))}
                 <div
                   onClick={() => {
-                    if (showMoreProject == "less") {
+                    if (!showMoreProject) {
                       setProjectDisplayList(projectsList)
-                      setShowMoreProject("more")
+                      setShowMoreProject(true)
                     } else {
                       setProjectDisplayList(projectsList.slice(0, 3))
-                      setShowMoreProject("less")
+                      setShowMoreProject(false)
                     }
                   }}
                   className={styles.showMore}
                 >
-                  {showMoreProject == "less" && (
+                  {!showMoreProject && (
                     <>
                       Show More <ChevronRight size={20} />
                     </>
                   )}
-                  {showMoreProject == "more" && (
+                  {showMoreProject && (
                     <>
                       <ChevronLeft size={20} />
                       Show less
@@ -429,12 +397,11 @@ On the backend, PHP was used to implement CRUD operations for managing products 
 
             <div className={styles.techStack}>
               <h1 className="font-mono font-semibold text-4xl">My Tech-Stack</h1>
-
               <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
                 <Marquee pauseOnHover className="[--duration:35s]">
                   {techStack1.map((tech, index) => (
                     <div key={index} className={styles.techStackItem}>
-                      <Image alt="" src={tech.iconUrl || "/placeholder.svg"} height={20} width={20} unoptimized />
+                      <Image alt={tech.name} src={tech.iconUrl} height={24} width={24} unoptimized />
                       <p>{tech.name}</p>
                     </div>
                   ))}
@@ -442,56 +409,98 @@ On the backend, PHP was used to implement CRUD operations for managing products 
                 <Marquee reverse pauseOnHover className="[--duration:35s]">
                   {techStack2.map((tech, index) => (
                     <div key={index} className={styles.techStackItem}>
-                      <Image alt="" src={tech.iconUrl || "/placeholder.svg"} height={20} width={20} unoptimized />
+                      <Image alt={tech.name} src={tech.iconUrl} height={24} width={24} unoptimized />
                       <p>{tech.name}</p>
                     </div>
                   ))}
                 </Marquee>
-
                 <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[var(--bgColor)]"></div>
                 <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[var(--bgColor)]"></div>
               </div>
             </div>
-          </>
+          </div>
         )}
 
         {displayTab == "experience" && (
-          <div className="mt-[30px] w-full mx-auto max-w-[1100px] px-4 sm:px-6">
-            <h2 className="text-[22px] font-semibold mb-6 font-mono">Experience & Projects</h2>
-            <div className="space-y-6">
-              {experiences.map((exp, i) => (
+          <div className={"mt-[30px] w-full mx-auto max-w-[1100px] px-4 sm:px-6 " + styles.tabContent}>
+
+            <h2 className="text-[22px] font-semibold mb-6 font-mono">Internships</h2>
+            <div className="space-y-6 mb-12">
+              {internships.map((exp, i) => (
                 <div key={i} className="rounded-lg border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
                   <div className="flex justify-between items-start mb-3">
                     <div>
                       <h3 className="font-mono font-bold text-lg">{exp.title}</h3>
                       <p className="text-sm opacity-70">{exp.company}</p>
                     </div>
-                    <span className="text-xs opacity-60 font-mono">{exp.duration}</span>
+                    <span className="text-xs opacity-60 font-mono whitespace-nowrap ml-4">{exp.duration}</span>
                   </div>
                   <p className="opacity-85 text-sm leading-relaxed">{exp.description}</p>
                 </div>
               ))}
             </div>
 
-            <h2 className="text-[22px] font-semibold mt-12 mb-6 font-mono">Education</h2>
+            <h2 className="text-[22px] font-semibold mb-6 font-mono">Education</h2>
+            <div className="space-y-4 mb-12">
+              <div className="rounded-lg border border-white/10 p-6 bg-white/5">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="font-mono font-bold text-lg">BS Computer Science (Post ADP)</h3>
+                    <p className="text-sm opacity-70">University of Education  Township Campus, Lahore</p>
+                  </div>
+                  <span className="text-xs opacity-60 font-mono whitespace-nowrap ml-4">SEP 2025 - APR 2027</span>
+                </div>
+                <p className="text-xs mt-2 inline-block px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono">Currently Enrolled</p>
+              </div>
+              <div className="rounded-lg border border-white/10 p-6 bg-white/5">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="font-mono font-bold text-lg">Associate Degree in Computer Science (ADP CS)</h3>
+                    <p className="text-sm opacity-70">Superior University, Lahore</p>
+                  </div>
+                  <span className="text-xs opacity-60 font-mono whitespace-nowrap ml-4">SEP 2023 - MAY 2025</span>
+                </div>
+                <p className="text-xs mt-2 opacity-70 font-mono">CGPA: 3.88 / 4.0</p>
+              </div>
+              <div className="rounded-lg border border-white/10 p-6 bg-white/5">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="font-mono font-bold text-lg">Intermediate in Computer Science (ICS)</h3>
+                    <p className="text-sm opacity-70">Fazaia Intermediate College, Lahore</p>
+                  </div>
+                  <span className="text-xs opacity-60 font-mono whitespace-nowrap ml-4">SEP 2021 - AUG 2023</span>
+                </div>
+                <p className="text-xs mt-2 opacity-70 font-mono">Grade: A</p>
+              </div>
+            </div>
+
+            <h2 className="text-[22px] font-semibold mb-6 font-mono">Projects</h2>
             <div className="space-y-4">
-              <div className="rounded-lg border border-white/10 p-6 bg-white/5">
-                <h3 className="font-mono font-bold text-lg">Associate Degree in Computer Science (ADP CS)</h3>
-                <p className="text-sm opacity-70">Superior University, Lahore</p>
-                <p className="text-xs opacity-60 font-mono mt-1">SEP 2023 - MAY 2025</p>
-              </div>
-              <div className="rounded-lg border border-white/10 p-6 bg-white/5">
-                <h3 className="font-mono font-bold text-lg">Intermediate in Computer Science (ICS)</h3>
-                <p className="text-sm opacity-70">Fazaia Intermediate College, Lahore</p>
-                <p className="text-xs opacity-60 font-mono mt-1">SEP 2021 - AUG 2023</p>
-              </div>
+              {projectsList.map((project, i) => (
+                <div
+                  key={i}
+                  className="rounded-lg border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition cursor-pointer"
+                  onClick={() => { openProjectModal(project.name); setDisplayTab("info") }}
+                >
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-mono font-bold text-lg">{project.name}</h3>
+                    <span className="text-xs opacity-60 font-mono ml-4 whitespace-nowrap">{project.work}</span>
+                  </div>
+                  <p className="opacity-75 text-sm leading-relaxed mb-3">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {project.techStack.map((tech, ti) => (
+                      <span key={ti} className="text-xs px-2 py-1 rounded-md bg-white/10 opacity-80 font-mono">{tech}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}
 
         {displayTab == "certifications" && (
-          <div className="mt-[30px] w-full mx-auto max-w-[1100px]">
-            <h2 className="text-[22px] font-semibold mb-6 font-mono">Certifications & Achievements</h2>
+          <div className={"mt-[30px] w-full mx-auto max-w-[1100px] " + styles.tabContent}>
+            <h2 className="text-[22px] font-semibold mb-6 font-mono">Certifications &amp; Achievements</h2>
             <div className="grid gap-4 sm:grid-cols-2">
               {certifications.map((c, i) => (
                 <div key={i} className="rounded-xl border border-white/10 p-4 bg-white/5">
@@ -513,12 +522,12 @@ On the backend, PHP was used to implement CRUD operations for managing products 
 
         <div className={styles.pageFooter}>
           <Link href="/AhmadTajResume.pdf" download>
-            <p className={`flex items-center gap-[5px] underline font-mono font-bold text-2xl leading-[0.55rem] ${styles.resumeBtn}`}>
+            <p className={"flex items-center gap-[5px] underline font-mono font-bold text-2xl leading-[0.55rem] " + styles.resumeBtn}>
               Resume <ArrowUpRight className="w-auto h-[26px]" size={16} />
             </p>
           </Link>
           <p className="text-center opacity-[0.7] max-w-[580px] font-mono font-semibold text-base tracking-tight">
-            Built by Ahmad Taj | Last Updated: January 17, 2026.
+            Built by Ahmad Taj | Last Updated: February 25, 2026.
           </p>
         </div>
 
@@ -536,15 +545,3 @@ On the backend, PHP was used to implement CRUD operations for managing products 
     </div>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
