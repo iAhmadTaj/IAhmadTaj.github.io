@@ -6,12 +6,8 @@
 ### 1. Clone this Repository
 ```
 # HTTPS
-git clone https://github.com/aayushmishramechatronics/portfolio-website.git
+git clone https[://github.com/iAhmadTaj/IAhmadTaj.github.io.git]
 
-# Or SSH (if you have SSH Keys configured)
-git clone git@github.com:aayushmishramechatronics/portfolio-website.git
-
-cd portfolio-website
 ```
 
 ### 2. Environment
