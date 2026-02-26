@@ -1,6 +1,5 @@
 ﻿"use client"
 import styles from "./root.module.css"
-import Image from "next/image"
 import {
   ArrowUpRight,
   ChevronLeft,
@@ -55,11 +54,11 @@ Key Features: Real-time mouse cursor movement controlled by eye direction, blink
     },
     "RedStore": {
       images: [
-        "/Redstore/LoginPage.png",
-        "/Redstore/Admin.png",
-        "/Redstore/Products.png",
-        "/Redstore/Cart.png",
-        "/Redstore/Main.png",
+        "/RedStore/LoginPage.png",
+        "/RedStore/Admin.png",
+        "/RedStore/Products.png",
+        "/RedStore/Cart.png",
+        "/RedStore/Main.png",
       ],
       fullDescription: `RedStore is a dynamic e-commerce web application focused on selling sportswear and tech products. The project uses a pre-designed frontend template, which was integrated with a custom backend developed in PHP to add full e-commerce functionality.
 
@@ -69,9 +68,9 @@ The application was developed and tested locally using XAMPP, with data stored i
     },
     "Toytown": {
       images: [
-        "/Toytown/login.png",
-        "/Toytown/products.png",
-        "/Toytown/complete.png",
+        "/ToyTown/login.png",
+        "/ToyTown/Products.png",
+        "/ToyTown/complete.png",
       ],
       fullDescription: `ToyTown is a responsive front-end focused e-commerce website designed for selling toys through an engaging and user-friendly interface. The project combines modern frontend design with essential backend functionality to simulate a real-world online shopping experience.
 
@@ -116,7 +115,7 @@ On the backend, PHP was used to implement CRUD operations for managing products 
     },
     {
       name: "RedStore",
-      imageUrl: "/Redstore/Database.png",
+      imageUrl: "/RedStore/Database.png",
       description: "A dynamic e-commerce website for sportswear and tech products featuring CRUD-based product management, user authentication, and a fully functional shopping cart. Includes an admin dashboard for managing products, users, and reviews.",
       work: "Solo Project",
       status: "Active",
@@ -124,7 +123,7 @@ On the backend, PHP was used to implement CRUD operations for managing products 
     },
     {
       name: "Toytown",
-      imageUrl: "/Toytown/hero.png",
+      imageUrl: "/ToyTown/hero.png",
       description: "A responsive e-commerce website for selling toys, featuring dynamic product listings, user reviews, and video sections. Includes PHP-based CRUD operations for managing users and products.",
       work: "Solo Project",
       status: "Active",
@@ -408,7 +407,7 @@ On the backend, PHP was used to implement CRUD operations for managing products 
                 <Marquee pauseOnHover className="[--duration:35s]">
                   {techStack1.map((tech, index) => (
                     <div key={index} className={styles.techStackItem}>
-                      <Image alt={tech.name} src={tech.iconUrl} height={24} width={24} unoptimized />
+                      <img alt={tech.name} src={tech.iconUrl} height={24} width={24} className="rounded-sm" />
                       <p>{tech.name}</p>
                     </div>
                   ))}
@@ -416,7 +415,7 @@ On the backend, PHP was used to implement CRUD operations for managing products 
                 <Marquee reverse pauseOnHover className="[--duration:35s]">
                   {techStack2.map((tech, index) => (
                     <div key={index} className={styles.techStackItem}>
-                      <Image alt={tech.name} src={tech.iconUrl} height={24} width={24} unoptimized />
+                      <img alt={tech.name} src={tech.iconUrl} height={24} width={24} className="rounded-sm" />
                       <p>{tech.name}</p>
                     </div>
                   ))}

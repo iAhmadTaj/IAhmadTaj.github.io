@@ -1,7 +1,6 @@
-"use client"
+﻿"use client"
 import type { ProjectType } from "@/lib/types"
 import styles from "./projectCard.module.css"
-import Image from "next/image"
 import { useState } from "react"
 import { Button } from "../ui/button"
 import { ArrowUpRight, Github } from "lucide-react"
@@ -9,22 +8,16 @@ import Link from "next/link"
 
 export default function ProjectCard({ projectDetails }: { projectDetails: ProjectType }) {
   const [showFooter, setShowFooter] = useState(true)
-  const IMAGE_W = 300
-  const IMAGE_H = 150
   return (
-    <div
-      className={styles.main}
-      // onClick removed
-    >
+    <div className={styles.main}>
       <div className={styles.projectItem}>
         <div className={styles.imgContainer}>
-          <Image
-            alt=""
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            alt={projectDetails.name}
             src={projectDetails.imageUrl || "/placeholder.svg"}
-            height={IMAGE_H}
-            width={IMAGE_W}
             loading="lazy"
-            className="rounded-md object-cover"
+            className="rounded-md object-cover w-full h-[150px]"
           />
           <div className={styles.p1}>{projectDetails.work}</div>
           <div className={projectDetails.status == "Active" ? styles.p2 : styles.devp2}>
