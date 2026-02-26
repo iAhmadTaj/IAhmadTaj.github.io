@@ -168,6 +168,13 @@ On the backend, PHP was used to implement CRUD operations for managing products 
   const [displayTab, setDisplayTab] = useState("info")
 
   const internships = [
+     {
+      title: "Software Engineer Intern",
+      company: "PHD Solutions",
+      duration: "MAR 2025 - MAY 2025",
+      description:
+        "Actively contributed to the full Software Development Lifecycle (SDLC), engaging in core development activities and managing version control for team projects. Collaborated across multiple teams to support company initiatives and assisted in client engagement, ensuring technical solutions met business requirements.",
+    },
     {
       title: "QA & Operations Intern",
       company: "Outsourcing Solutions  Onsite, Lahore",
@@ -175,13 +182,7 @@ On the backend, PHP was used to implement CRUD operations for managing products 
       description:
         "Started in the Business Development team, gaining insight into client requirements and project scoping. Quickly transitioned to a Quality Assurance (QA) role, where I performed functional testing, identified software bugs, and validated features to ensure high-quality deliverables.",
     },
-    {
-      title: "Software Engineer Intern",
-      company: "PHD Solutions",
-      duration: "MAR 2025 - MAY 2025",
-      description:
-        "Actively contributed to the full Software Development Lifecycle (SDLC), engaging in core development activities and managing version control for team projects. Collaborated across multiple teams to support company initiatives and assisted in client engagement, ensuring technical solutions met business requirements.",
-    },
+   
   ]
 
   const certifications = [
