@@ -408,7 +408,7 @@ On the backend, PHP was used to implement CRUD operations for managing products 
                 <Marquee pauseOnHover className="[--duration:35s]">
                   {techStack1.map((tech, index) => (
                     <div key={index} className={styles.techStackItem}>
-                      <img alt={tech.name} src={tech.iconUrl} height={24} width={24} className="rounded-sm" />
+                      <img suppressHydrationWarning alt={tech.name} src={tech.iconUrl} height={24} width={24} className="rounded-sm" />
                       <p>{tech.name}</p>
                     </div>
                   ))}
@@ -416,7 +416,7 @@ On the backend, PHP was used to implement CRUD operations for managing products 
                 <Marquee reverse pauseOnHover className="[--duration:35s]">
                   {techStack2.map((tech, index) => (
                     <div key={index} className={styles.techStackItem}>
-                      <img alt={tech.name} src={tech.iconUrl} height={24} width={24} className="rounded-sm" />
+                      <img suppressHydrationWarning alt={tech.name} src={tech.iconUrl} height={24} width={24} className="rounded-sm" />
                       <p>{tech.name}</p>
                     </div>
                   ))}
@@ -534,7 +534,7 @@ On the backend, PHP was used to implement CRUD operations for managing products 
             </p>
           </Link>
           <p className="text-center opacity-[0.7] max-w-[580px] font-mono font-semibold text-base tracking-tight">
-            Built by Ahmad Taj | Last Updated: February 25, 2026.
+            Built by Ahmad Taj | Last Updated: February 26, 2026.
           </p>
         </div>
 

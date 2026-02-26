@@ -14,6 +14,7 @@ export default function ProjectCard({ projectDetails }: { projectDetails: Projec
         <div className={styles.imgContainer}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
+            suppressHydrationWarning
             alt={projectDetails.name}
             src={projectDetails.imageUrl || "/placeholder.svg"}
             loading="lazy"
