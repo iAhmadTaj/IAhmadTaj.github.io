@@ -21,7 +21,7 @@ import ProjectModal from "@/components/projectModal/projectModal"
 import type { ProjectType } from "@/lib/types"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import cn from "classnames"
 
 export default function RotPage() {
@@ -135,6 +135,9 @@ On the backend, PHP was used to implement CRUD operations for managing products 
   const [projectDisplayList, setProjectDisplayList] = useState(projectsList.slice(0, 3))
   const [showMoreProject, setShowMoreProject] = useState(false)
 
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => { setMounted(true) }, [])
+
   const DEVICON = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons"
 
   const techStack1 = [
@@ -167,18 +170,18 @@ On the backend, PHP was used to implement CRUD operations for managing products 
 
   const internships = [
     {
-      title: "Virtual Assistant Intern",
+      title: "QA & Operations Intern",
       company: "Outsourcing Solutions  Onsite, Lahore",
-      duration: "MAR 2025 - MAY 2025",
+      duration: "JAN 2025 - MAR 2025",
       description:
-        "Started in the Business Development (BD) team, contributing to client outreach and coordination. Transitioned into a QA role mid-way, where I was involved in quality assurance for an ongoing project through to completion.",
+        "Started in the Business Development team, gaining insight into client requirements and project scoping. Quickly transitioned to a Quality Assurance (QA) role, where I performed functional testing, identified software bugs, and validated features to ensure high-quality deliverables.",
     },
     {
       title: "Software Engineer Intern",
       company: "PHD Solutions",
       duration: "MAR 2025 - MAY 2025",
       description:
-        "Demonstrated strong communication skills and a sound understanding of the software development lifecycle. Actively involved in client engagement, development activities, version control management, and supporting multiple teams across the organization.",
+        "Actively contributed to the full Software Development Lifecycle (SDLC), engaging in core development activities and managing version control for team projects. Collaborated across multiple teams to support company initiatives and assisted in client engagement, ensuring technical solutions met business requirements.",
     },
   ]
 
@@ -236,6 +239,7 @@ On the backend, PHP was used to implement CRUD operations for managing products 
                 }}
                 whileHover={{ boxShadow: "0 0 30px 2px rgba(255, 255, 255, 0.5)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                suppressHydrationWarning
                 style={{ objectFit: "cover", transition: "box-shadow 0.1s" }}
               />
             </motion.div>
@@ -288,7 +292,7 @@ On the backend, PHP was used to implement CRUD operations for managing products 
               onClick={() => setCurrentTheme(currentTheme === "dark" ? "light" : "dark")}
               aria-label="Toggle color theme"
             >
-              {currentTheme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
+              {!mounted || currentTheme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
               <p>Theme</p>
             </button>
           </div>
@@ -334,6 +338,9 @@ On the backend, PHP was used to implement CRUD operations for managing products 
               </p>
               <p>
                 I graduated with an ADP in Computer Science from Superior University (CGPA 3.88) and am currently furthering my degree with a BS CS at the University of Education, Lahore. I have hands-on experience through two internships and competition projects, including a 1st-place win in a university PBL competition. I work well in teams, pick up new tools quickly, and care about shipping things that actually work.
+              </p>
+              <p>
+                Whether leading a project or collaborating in a team, I focus on shipping code that works, scales, and solves real-world problems.
               </p>
               <div className={styles.statsGrid}>
                 <div className={styles.statItem}>
