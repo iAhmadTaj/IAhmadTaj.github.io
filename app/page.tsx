@@ -534,7 +534,7 @@ On the backend, PHP was used to implement CRUD operations for managing products 
             </p>
           </Link>
           <p className="text-center opacity-[0.7] max-w-[580px] font-mono font-semibold text-base tracking-tight">
-            Built by Ahmad Taj | Last Updated: February 26, 2026.
+            Built by Ahmad Taj | Last Updated: June 11, 2026.
           </p>
         </div>
 
